@@ -26,4 +26,9 @@
     uvicorn app.main:app --reload
     ```
     서버가 실행되면 http://127.0.0.1:8000 에서 API를 테스트할 수 있습니다.
+
+    
+체육시설 인접 대중교통 정보
+https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=615e7eb0-6e17-11ee-88b4-1384e6e2c3c9
+    
     
