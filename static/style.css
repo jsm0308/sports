@@ -1,0 +1,142 @@
+:root {
+    --primary-green: #2ecc71;
+    --dark-green: #27ae60;
+    --text-dark: #2c3e50;
+    --panel-bg: #ffffff;
+    --border-light: #ecf0f1;
+    --accent-blue: #3498db;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 상단 컨트롤 패널 */
+.control-panel {
+    background-color: var(--panel-bg);
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.control-panel h1 {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: var(--text-dark);
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* 지도 영역 */
+#map {
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* 하단 결과 패널 */
+.results-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--panel-bg);
+    padding: 15px 20px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    z-index: 20;
+    transform: translateY(100%); /* 기본적으로 아래에 숨김 */
+    transition: transform 0.4s ease-in-out;
+}
+
+.results-panel.show {
+    transform: translateY(0); /* .show 클래스가 추가되면 위로 올라옴 */
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #7f8c8d;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--accent-blue);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.result-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-info {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.detail-info {
+    text-align: right;
+    color: #7f8c8d;
+}
+.detail-info span {
+    display: block;
+}
+.detail-info span b {
+    color: var(--text-dark);
+}

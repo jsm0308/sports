@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ScoreRoute - 경로 탐색</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=27nkfb9obp"></script>
+</head>
+<body>
+    <div class="control-panel">
+        <h1>🏟️ ScoreRoute</h1>
+        <div class="form-group">
+            <input type="text" id="start" value="잠실야구장" placeholder="출발지">
+            <input type="text" id="destination" placeholder="강남역">
+        </div>
+        <button class="submit-btn">⚡ 빠른 경로 탐색</button>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="results-panel" id="results-panel">
+        <div class="tabs">
+            <button class="tab-btn active" data-path="fastest">최단 시간</button>
+            <button class="tab-btn" data-path="walk">최소 도보</button>
+        </div>
+        <div class="result-content">
+            <div class="time-info">
+                <span id="total-time">--</span>분
+            </div>
+            <div class="detail-info">
+                <span>도보 <span id="walk-time">--</span>분</span>
+                <span>환승 <span id="transfer-count">--</span>회</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
